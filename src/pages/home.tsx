@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card'
 import { featuresItems, programs } from "@/constants"
 import React from "react"
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 	return( <>
@@ -13,7 +14,8 @@ const Home = () => {
     <p className="text-muted-foreground"> Lorem ipsum dolor sit amet, consectetur
        adipisicing elit. Animi soluta, quisquam quidem, voluptas inventore, 
        \eius quod ut aperiam ipsa no</p>
-       <Button className="h-12 mt-6 font-bold w-fit size={'lg'}">Join club now</Button>
+       <Link to={'/auth'}>
+       <Button className="h-12 mt-6 font-bold w-fit size={'lg'}">Join club now</Button></Link>
        <div className="mt-24">
         <p className="text-muted-foreground"> AS FEATURED IN</p>
         <div className="flex items-center gap-5 mt-2">
