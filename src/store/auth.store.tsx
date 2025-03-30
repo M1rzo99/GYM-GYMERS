@@ -11,3 +11,6 @@ export const useAuthState = create<IAuthStateStore>(set =>({
     authState:"login",
     setAuth:state=>set({authState:state})
 }))
+
+
+
