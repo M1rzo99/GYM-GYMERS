@@ -19,12 +19,14 @@ import {
   AlertTitle,
 } from "@/components/ui/alert"
 import FillLoading from '@/components/shared/fill-loading'
+import { useUserState } from '@/store/user.store'
 
 const Register = () => {
     const [isLoading,setIsLoading] = useState(false)
     const [error,setError] = useState("")
     const {setAuth}  = useAuthState()
     const navigate = useNavigate()
+    const {setUser} = useUserState()
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -35,7 +37,8 @@ const Register = () => {
       const {email,password} = values
       setIsLoading(true)
       try {
-        await createUserWithEmailAndPassword(auth,email,password)
+     const res =    await createUserWithEmailAndPassword(auth,email,password)
+     setUser(res.user)
         navigate('/')
       } catch (error) {
         const err = error as Error
@@ -44,9 +47,6 @@ const Register = () => {
         setIsLoading(false)
       }
     }
-
-    
-
   return (
     <div>
      <div className='flex flex-col'>

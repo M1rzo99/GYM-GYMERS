@@ -19,6 +19,7 @@ import {
   AlertTitle,
 } from "@/components/ui/alert"
 import FillLoading from '@/components/shared/fill-loading'
+import { useUserState } from '@/store/user.store'
 
 
 const Login = () => {
@@ -27,6 +28,7 @@ const Login = () => {
     const [isLoading,setIsLoading] = useState(false)
     const [error,setError] = useState("")
     const navigate = useNavigate()
+    const {setUser} = useUserState()
 
 
     const form = useForm<z.infer<typeof loginSchema>>({
@@ -40,7 +42,8 @@ const Login = () => {
     
       try {
         // Bu yerda 'await' qo'shish kerak
-        await signInWithEmailAndPassword(auth, email, password);
+        const res = await signInWithEmailAndPassword(auth, email, password);
+        setUser(res.user)
         navigate('/');
         
       } catch (error) {

@@ -13,3 +13,7 @@ export const registerSchema = z.object({
     message:"Password do not match",
     path:["confirmPassword"]
 }) // bu data email va passwordlarimizga teng bo'ladi(elarning qiymati) 
+
+export const taskSchema = z.object({
+    title:z.string().min(5),
+})
