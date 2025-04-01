@@ -4,8 +4,6 @@ import { Card } from '@/components/ui/card'
 import { featuresItems, programs } from "@/constants"
 import { auth } from '@/firebase/firebase'
 import { useUserState } from '@/store/user.store'
-import { User } from 'lucide-react'
-import React from "react"
 import { CgGym } from 'react-icons/cg'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link, useNavigate } from 'react-router-dom'
@@ -37,7 +35,6 @@ const Home = () => {
         <CgGym className='w-5 h-5 ml-2'/>
         </Button>
         </Link>
-
         
         <Button className='h-12 mt-6 font-bold w-fit size={lg}' variant={'destructive'} onClick={onLogout}>
         <span>Logout</span>
@@ -49,7 +46,6 @@ const Home = () => {
               <Link to={'/auth'}>
               <Button className="h-12 mt-6 font-bold w-fit size={'lg'}">Join club now</Button></Link>
        )}
-  
 
        <div className="mt-24">
         <p className="text-muted-foreground"> AS FEATURED IN</p>

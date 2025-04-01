@@ -1,7 +1,6 @@
 
 import { useUserState } from '@/store/user.store'
 import { LuLoader } from 'react-icons/lu'
-import React from 'react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator } from '../ui/dropdown-menu'
 import { DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { AvatarFallback, AvatarImage,Avatar } from '../ui/avatar'

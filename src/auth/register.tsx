@@ -4,7 +4,6 @@ import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { registerSchema } from '@/lib/validation'
 import { useAuthState } from '@/store/auth.store'
-import React, { useState } from 'react'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -20,6 +19,7 @@ import {
 } from "@/components/ui/alert"
 import FillLoading from '@/components/shared/fill-loading'
 import { useUserState } from '@/store/user.store'
+import { useState } from 'react'
 
 const Register = () => {
     const [isLoading,setIsLoading] = useState(false)
@@ -37,7 +37,7 @@ const Register = () => {
       const {email,password} = values
       setIsLoading(true)
       try {
-     const res =    await createUserWithEmailAndPassword(auth,email,password)
+     const res = await createUserWithEmailAndPassword(auth,email,password)
      setUser(res.user)
         navigate('/')
       } catch (error) {

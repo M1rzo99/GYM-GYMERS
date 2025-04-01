@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { loginSchema } from '@/lib/validation'
 import { useAuthState } from '@/store/auth.store'
 import { useForm } from 'react-hook-form'

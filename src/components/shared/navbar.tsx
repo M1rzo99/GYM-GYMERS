@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import { navLinks } from '../../constants'
 import { Button } from '@/components/ui/button'
 import { ModeToggle } from './mode-toggle'

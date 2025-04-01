@@ -3,12 +3,12 @@ import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { db } from '@/firebase/firebase'
+
 import { taskSchema } from '@/lib/validation'
 import { useUserState } from '@/store/user.store'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { addDoc, collection } from 'firebase/firestore'
-import React, { useState } from 'react'
+
+import  { useState } from 'react'
 import {  useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
@@ -23,6 +23,8 @@ interface Props{
 const TaskForm = ({title='',handler,isEdit,onClose}:Props) => {
 const [isLoading,setIsLoading] = useState(false)
 const {user} = useUserState()
+
+
 
     const form = useForm<z.infer<typeof taskSchema>>({
         resolver: zodResolver(taskSchema),
