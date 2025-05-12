@@ -26,7 +26,11 @@ export const programs=[
     }
 ]
 
-export const navLinks=[
-    {label:"Home",path:"#home"},
-    {label:'Programs',path:'#programs'}
-]
+// export const navLinks=[
+//     {label:"Home",path:"#home"},
+//     {label:'Programs',path:'#programs'}
+// ]
+export const navLinks = [
+    { label: "Home", path: "/" },            // bosh sahifa
+    { label: "Programs", path: "/dashboard" } // "goto-gym" sahifa
+  ];
